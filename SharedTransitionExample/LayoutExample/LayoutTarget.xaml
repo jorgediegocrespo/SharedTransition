@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="SharedTransitionExample.LayoutTarget"
+             Title="Layout target">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="220" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ffimageloading:CachedImage Source="xamarinLogo.png" Grid.Row="0" Grid.Column="0"
+                                    sharedTransitions:Transition.Name="xamarinFfLogo"
+                                    BackgroundColor="Transparent"
+                                    Aspect="AspectFit"
+                                    Margin="10"
+                                    
+                                    HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Image Source="xamarinLogo.png" Grid.Row="1" Grid.Column="0"
+               sharedTransitions:Transition.Name="xamarinLogo"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"
+               Margin="10"
+               HeightRequest="200" WidthRequest="200"
+               HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <BoxView Grid.Row="0" Grid.Column="1"
+                 sharedTransitions:Transition.Name="firstBoxView"
+                 BackgroundColor="Red"
+                 Margin="10"
+                 CornerRadius="75"
+                 HeightRequest="150" WidthRequest="150"
+                 HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <BoxView Grid.Row="1" Grid.Column="1"
+                 sharedTransitions:Transition.Name="secondBoxView"
+                 BackgroundColor="Blue"
+                 Margin="10"
+                 HeightRequest="150" WidthRequest="150"
+                 HorizontalOptions="Center" VerticalOptions="Center" />
+    </Grid>
+</ContentPage>

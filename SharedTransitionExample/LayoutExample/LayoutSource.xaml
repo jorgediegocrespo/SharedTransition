@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="SharedTransitionExample.LayoutSource"
+             Title="Layout source">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ffimageloading:CachedImage Source="xamarinLogo.png" Grid.Row="0"
+                                    sharedTransitions:Transition.Name="xamarinFfLogo"
+                                    BackgroundColor="Transparent"
+                                    Aspect="AspectFit"
+                                    Margin="10"
+                                    HeightRequest="100" WidthRequest="100"
+                                    HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Image Source="xamarinLogo.png" Grid.Row="1"
+               sharedTransitions:Transition.Name="xamarinLogo"
+               BackgroundColor="Transparent"
+               Aspect="AspectFit"
+               Margin="10"
+               HeightRequest="100" WidthRequest="100"
+               HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <BoxView Grid.Row="2"
+                 sharedTransitions:Transition.Name="firstBoxView"
+                 BackgroundColor="Red"
+                 Margin="10"
+                 HeightRequest="100" WidthRequest="100"
+                 HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <BoxView Grid.Row="3"
+                 sharedTransitions:Transition.Name="secondBoxView"
+                 BackgroundColor="Blue"
+                 Margin="10"
+                 CornerRadius="50"
+                 HeightRequest="100" WidthRequest="100"
+                 HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+        <Button x:Name="BtnAction" Grid.Row="4"
+                Text="Navigate"
+                Clicked="BtnAction_Clicked"
+                HorizontalOptions="Center" VerticalOptions="Center" />
+    </Grid>
+</ContentPage>

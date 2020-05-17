@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SharedTransitionExample.MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="BtnLayoutExample" Text="Layout example" Clicked="BtnLayout_Clicked"/>
+        <Button x:Name="BtnCollectionExample" Text="Collection example" Clicked="BtnCollection_Clicked"/>
+    </StackLayout>
+</ContentPage>
