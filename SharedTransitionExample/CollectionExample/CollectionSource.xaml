@@ -2,7 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SharedTransitionExample.CollectionSource"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             sharedTransitions:SharedTransitionNavigationPage.TransitionSelectedGroup="{Binding SelectedMonkey.Id}"
+             sharedTransitions:SharedTransitionNavigationPage.BackgroundAnimation="Fade"
+             sharedTransitions:SharedTransitionNavigationPage.TransitionDuration="300"
              Title="Collection source">
     <Grid>
+        <CollectionView x:Name="CvMonkeys"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedMonkey}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ffimageloading:CachedImage  Grid.RowSpan="2"
+                                                     BackgroundColor="Transparent"
+                                                     Source="{Binding ImageUrl}"
+                                                     Aspect="AspectFit"
+                                                     sharedTransitions:Transition.Name="MonkeyImage"
+                                                     sharedTransitions:Transition.Group="{Binding Id}"
+                                                     Margin="2"
+                                                     VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                            <ffimageloading:CachedImage.Transformations>
+                                <fftransformations:CircleTransformation/>
+                            </ffimageloading:CachedImage.Transformations>
+                            </ffimageloading:CachedImage>
+
+                        <Label Grid.Column="1" 
+                               Text="{Binding Name}"
+                               FontSize="Title"
+                               sharedTransitions:Transition.Name="MonkeyTitle"
+                               sharedTransitions:Transition.Group="{Binding Id}"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+
+                        <Label Grid.Column="1" Grid.Row="1"
+                               Text="{Binding Detail}"
+                               FontSize="Subtitle"
+                               sharedTransitions:Transition.Name="MonkeySubtitle"
+                               sharedTransitions:Transition.Group="{Binding Id}"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

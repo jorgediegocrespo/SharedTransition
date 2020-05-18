@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 using Xamarin.Forms;
 
 namespace SharedTransitionExample
 {
     public partial class CollectionTarget : ContentPage
     {
-        public CollectionTarget()
+        public Monkey Monkey { get; set; }
+
+        public CollectionTarget(Monkey monkey)
         {
+            Monkey = monkey;
+
             InitializeComponent();
+            BindingContext = this;
         }
     }
 }

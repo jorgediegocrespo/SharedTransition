@@ -9,7 +9,7 @@
 
         private void BtnAction_Clicked(object sender, System.EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new LayoutTarget());
+            App.Current.MainPage.Navigation.PushAsync(new LayoutTarget(), true);
         }
     }
 }

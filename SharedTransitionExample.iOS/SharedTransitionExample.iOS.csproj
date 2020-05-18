@@ -131,6 +131,9 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -141,5 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\xamarinLogo.png" />
+    <BundleResource Include="Resources\monkey1.jpeg" />
+    <BundleResource Include="Resources\monkey2.jpeg" />
+    <BundleResource Include="Resources\monkey3.jpeg" />
+    <BundleResource Include="Resources\monkey4.jpeg" />
+    <BundleResource Include="Resources\monkey5.jpeg" />
   </ItemGroup>
 </Project>

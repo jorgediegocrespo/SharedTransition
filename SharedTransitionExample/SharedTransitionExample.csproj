@@ -15,11 +15,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.1.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CollectionExample\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="CollectionExample\CollectionSource.xaml.cs" />
   </ItemGroup>
 </Project>

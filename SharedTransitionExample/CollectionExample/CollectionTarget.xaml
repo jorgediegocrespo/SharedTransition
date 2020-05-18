@@ -1,8 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
              x:Class="SharedTransitionExample.CollectionTarget"
              Title="Collection target">
-    <Grid>
-    </Grid>      
+    <StackLayout>
+        <ffimageloading:CachedImage  BackgroundColor="Transparent"
+                                     Source="{Binding Monkey.ImageUrl}"
+                                     Aspect="AspectFit"
+                                     sharedTransitions:Transition.Name="MonkeyImage"
+                                     Margin="20"
+                                     HeightRequest="200" WidthRequest="200"
+                                     VerticalOptions="Start" HorizontalOptions="Center">
+                            <ffimageloading:CachedImage.Transformations>
+                                <fftransformations:CircleTransformation/>
+                            </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>
+
+        <Label Text="{Binding Monkey.Name}"
+               FontSize="Title"
+               sharedTransitions:Transition.Name="MonkeyTitle"
+               HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Label Text="{Binding Monkey.Detail}"
+               FontSize="Subtitle"
+               sharedTransitions:Transition.Name="MonkeySubtitle"
+               HorizontalOptions="Center" VerticalOptions="Center" />
+    </StackLayout>      
 </ContentPage>
